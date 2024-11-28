@@ -34,8 +34,7 @@ contract VerseTokenTest is Test {
     function testAllowances() public {
         uint256 initialAllowance = 1000;
 
-        // Bob approves Alice to spend tokens on his behalf
-
+        // Jeremiah approves Alice to spend tokens on his behalf
         vm.prank(Jeremiah);
         verseToken.approve(Alice, initialAllowance);
         uint256 transferAmount = 500;
@@ -43,9 +42,6 @@ contract VerseTokenTest is Test {
         vm.prank(Alice);
         verseToken.transferFrom(Jeremiah, Alice, transferAmount);
         assertEq(verseToken.balanceOf(Alice), transferAmount);
-        assertEq(
-            verseToken.balanceOf(Jeremiah),
-            INITIAL_BALANCE - transferAmount
-        );
+        assertEq(verseToken.balanceOf(Jeremiah), INITIAL_BALANCE - transferAmount);
     }
 }
