@@ -5,6 +5,6 @@ libs = ["lib"]
 
 remappings = [
     'forge-std=lib/forge-std/src',
-    '@openzeppelin=lib/openzeppelin'
+    '@openzeppelin=lib/openzeppelin-contracts'
 ]
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
